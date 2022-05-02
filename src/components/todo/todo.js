@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import useForm from '../../hooks/form.js';
+import { SettingsContext } from '../../context/settings.js';
 
 import { v4 as uuid } from 'uuid';
 
 const ToDo = () => {
+
+  const settings = useContext(SettingsContext)
 
   const defaultValues = {
     difficulty: 4,
