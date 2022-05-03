@@ -3,29 +3,29 @@ import useForm from '../../hooks/form.js';
 import { useContext } from 'react';
 import { SettingsContext } from '../../context/settings.js';
 
-const Form = () => {
+const Form = (props) => {
 
   const settings = useContext(SettingsContext)
 
   return(
 
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={props.handleSubmit}>
 
         <h2>Add To Do Item</h2>
 
         <label>
           <span>To Do Item</span>
-          <input onChange={handleChange} name="text" type="text" placeholder="Item Details" />
+          <input onChange={props.handleChange} name="text" type="text" placeholder="Item Details" />
         </label>
 
         <label>
           <span>Assigned To</span>
-          <input onChange={handleChange} name="assignee" type="text" placeholder="Assignee Name" />
+          <input onChange={props.handleChange} name="assignee" type="text" placeholder="Assignee Name" />
         </label>
 
         <label>
           <span>Difficulty</span>
-          <input onChange={handleChange} defaultValue={defaultValues.difficulty} type="range" min={1} max={5} name="difficulty" />
+          <input onChange={props.handleChange} defaultValue={props.defaultValues.difficulty} type="range" min={1} max={5} name="difficulty" />
         </label>
 
         <label>
@@ -34,3 +34,5 @@ const Form = () => {
       </form>
   )
 }
+
+export default Form;
