@@ -1,11 +1,6 @@
 import React from 'react';
-import useForm from '../../hooks/form.js';
-import { useContext } from 'react';
-import { SettingsContext } from '../../context/settings.js';
 
 const Form = (props) => {
-
-  const settings = useContext(SettingsContext)
 
   return(
 

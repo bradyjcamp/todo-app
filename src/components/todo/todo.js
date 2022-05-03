@@ -8,8 +8,7 @@ import { v4 as uuid } from 'uuid';
 
 const ToDo = () => {
 
-  const settings = useContext(SettingsContext)
-
+  
   const defaultValues = {
     difficulty: 4,
   }
@@ -17,6 +16,8 @@ const ToDo = () => {
   const [list, setList] = useState([]);
   const [incomplete, setIncomplete] = useState([]);
   const { handleChange, handleSubmit } = useForm(addItem, defaultValues);
+  const settings = useContext(SettingsContext);
+  console.log(settings)
 
   function addItem(item) {
     console.log(item);
