@@ -1,11 +1,12 @@
-import React, { useEffect, useState, useContext } from 'react';
-import useForm from '../../hooks/form.js';
-import { SettingsContext } from '../../context/settings.js';
+import React from 'react';
 
 
 const List = (props) => {
   
-
+  // let initialIndex = page * settings.numToDisplay
+  // let finalIndex = ((page + 1) * settings.numToDisplay) - 1;
+  //return sub array from pageindex-2 up to and including itemIndex
+  
   return(
     <>
     {props.list.map(item => (

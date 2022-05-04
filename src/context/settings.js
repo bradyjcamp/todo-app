@@ -1,24 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const SettingsContext = React.createContext();
 
-class SettingsProvider extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      displayCompletedItems: false,
-      numberOfDisplayedItems: 3,
-      defaultSortField: '',
-    }
+const SettingsProvider = ({ children }) => {
+
+  const [completed, setComplete] = useState(false);
+  const [pageItems, setpageItems] = useState(3);
+  const [sort, setSort] = useState('difficulty');
+
+  const addCompletedItem(item){
+    //add item to our completed list
+
   }
 
-  render(){
-    return(
-      <SettingsContext.Provider value={this.state}>
-        {this.props.children}
-      </SettingsContext.Provider>
-    )
-  }
+  return (
+    <SettingsContext.Provider value={{ completed, pageItems, sort, addCompletedItem }}>
+      {children}
+    </SettingsContext.Provider>
+  );
 }
+
 
 export default SettingsProvider;
